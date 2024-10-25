@@ -1,4 +1,11 @@
 #!/bin/bash
+#$ -cwd
+#$ -l h_rt=350:00:00    ## change time
+#$ -l h_vmem=8G         ## change memory per core
+#$ -N DNAmap
+#$ -m baes
+#$ -pe sharedmem 8
+
 SAMPLE=$1          #Prefix     ## Give sample name via command line
 RAWSEQ=./Raw_data/DNA_WGS/clean/$1      #./   ## Give full path to fastQ.gz files via command line
 DATOUT=./WholeGenomeSequence/bam_dna/$1      #prefix   ## Give path for output directory
